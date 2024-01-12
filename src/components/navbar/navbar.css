@@ -6,4 +6,15 @@
     font-weight: 600;
     color: aliceblue;
     font-family: 'Oswald', sans-serif;
+    padding-right: 20px;
+}
+
+.nav-item {
+    transition: border-color 0.3s ease-in-out;
+    border: 1px solid transparent;
+    padding: 5px;
+    border-radius: 5px;
+}
+.nav-item:hover {
+   border-color: white;
 }

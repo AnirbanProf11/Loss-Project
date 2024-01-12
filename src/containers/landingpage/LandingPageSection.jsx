@@ -4,11 +4,13 @@ import "./LandingPage.css";
 const LandingPageSection = () => {
   return (
     <div class="flex-container bg_gradient">
-      <div class="item1">item 1</div>
-      <div class="item2">item 2</div>
-      <div class="item3">item 3</div>
-      <div class="item4">item 4</div>
-      <div class="item5">item 5</div>
+      <img src="https://picsum.photos/200/600" className="responsive-image"></img>
+      <img src="https://picsum.photos/200/600" className="responsive-image"></img>
+      <div>
+        <h1 className="hero">LOSS PROJECT</h1></div>{/* <img src="https://picsum.photos/200/600" className="responsive-image image3"></img> */}
+      <img src="https://picsum.photos/200/600" className="responsive-image"></img>
+      <img src="https://picsum.photos/200/600" className="responsive-image"></img>
+
     </div>
   );
 };

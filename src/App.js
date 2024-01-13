@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Footer, LandingPage } from "./containers";
-import { Cta, People, Songs, Navbar, Bts } from "./components";
+import { People, Songs, Navbar, Bts } from "./components";
 
 import './App.css'
 
@@ -12,7 +12,6 @@ function App() {
         <Navbar />
       </div>
       <LandingPage />
-      <Cta />
       <Songs />
       <People />
       <Bts />

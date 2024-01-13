@@ -1,0 +1,25 @@
+.big-title-cta-container {
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    padding: 10px;
+}
+
+.big-title-cta-container h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.cta-buttons button {
+    padding: 10px 20px;
+    font-size: 1rem;
+}

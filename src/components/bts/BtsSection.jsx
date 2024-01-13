@@ -4,7 +4,7 @@ import './bts.css'
 const BtsSection = () => {
   return (
     <div>
-      BEHIND THE SCENES
+      Change It
     </div>
   )
 }

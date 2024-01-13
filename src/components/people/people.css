@@ -1,0 +1,88 @@
+.people-section-container {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.team-title {
+    color: antiquewhite;
+    font-size: 2rem;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.people-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+.person-item {
+    width: calc(33.33 - 40px);
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    border-radius: 8px;
+    transition: transform 0.1s ease, background-color 0.1s ease;
+    border: 2px solid transparent;
+}
+
+/* .person-item:hover {
+    background-color: white;
+} */
+
+.person-item:hover {
+    
+    transform: scale(1.05);
+    border: 1px solid wheat;
+}
+
+.person-photo img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+    box-shadow: 0 4px 8px rgb(0, 0, 0, 0.1);
+}
+
+.person-details {
+    text-align: center;
+
+}
+
+.person-name {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.person-contribution{
+    color: wheat;
+    margin-bottom: 15px;
+
+}
+
+.person-name:hover {
+    color: wheat;
+    cursor: pointer;
+}
+
+.person-links a {
+    margin-right: 10px;
+    font-size: 24px;
+    color: wheat;
+    transition: color 0.3s ease;
+}
+
+.person-links a:hover {
+    color: #007bff;
+
+    &.instagram-icon:hover{
+        color: violet;
+    }
+
+    &.facebook-icon:hover{
+        color: blue;
+    }
+}

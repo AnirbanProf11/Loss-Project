@@ -50,6 +50,15 @@ const SongsSection = () => {
     setShowModal(true);
   };
 
+  const closeModal = () => {
+    setShowModal(false);
+    setSelectedSong(null);
+  };
+
+  const handleBackdropClick = (event) => {
+    if (event.target === event.currentTarget) closeModal();
+  };
+
   const handlePlatformClick = (platform) => {
     switch (platform) {
       case "Spotify":
@@ -66,57 +75,61 @@ const SongsSection = () => {
         break;
 
       default:
-        
         break;
     }
   };
 
-  return(
-
-  <>
-    <div className="container mt-5">
-      <h1 className="mb-4">Songs Selection</h1>
-      {songs.map((song, index) => (
-        <div
-          key={index}
-          className="song-item"
-          onClick={() => handleSongClick(song)}
-        >
-          {song.name}
-        </div>
-      ))}
-      {showModal && (
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h5 className="modal-title">
-                Select A Platform For {selectedSong.name}
-              </h5>
-              <button
-                type="button"
-                className="close"
-                onClick={() => setShowModal(false)}
-              >
-                &times;
-              </button>
-            </div>
-            <div className="modal-body">
-              {selectedSong.platforms.map((platform, index) => (
-                <button
-                  key={index}
-                  className="platform-button"
-                  onClick={() => handlePlatformClick(platform)}
-                >
-                  <i className={`bi bi-${platform} platform-icon`}></i>
-                  {platform}
-                </button>
-              ))}
+  return (
+    <>
+      <div className="container mt-5">
+        <h1 className="text-center mb-4">Tracks On Loss Project</h1>
+        {songs.map((song, index) => (
+          <div
+            key={index}
+            className="song-item"
+            onClick={() => handleSongClick(song)}
+          >
+            {song.name}
+            <div className="content-wrapper">
+              <div className="hover-effect"></div>
             </div>
           </div>
-        </div>
-      )}
-    </div>
-  </>)
+        ))}
+        {showModal && (
+          <div className="modal-backdrop" onClick={handleBackdropClick}>
+            <div className="modal-dialog">
+              <div className="modal-content">
+                <div className="modal-header">
+                  <h5 className="modal-title">
+                    Listen To {selectedSong.name} On
+                  </h5>
+                  <button
+                    type="button"
+                    className="close"
+                    onClick={() => setShowModal(false)}
+                  >
+                    &times;
+                  </button>
+                </div>
+                <div className="modal-body">
+                  {selectedSong.platforms.map((platform, index) => (
+                    <button
+                      key={index}
+                      className="platform-button"
+                      onClick={() => handlePlatformClick(platform)}
+                    >
+                      <i className={`bi bi-${platform} platform-icon`}></i>
+                      {platform}
+                    </button>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+        )}
+      </div>
+    </>
+  );
 };
 
 export default SongsSection;

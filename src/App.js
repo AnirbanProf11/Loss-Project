@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Footer, LandingPage } from "./containers";
+import { Footer, LandingPage, EpisodeSection } from "./containers";
 import { PeopleSection, SongsSection, Navbar, Bts } from "./components";
 
 import './App.css'
@@ -12,7 +12,7 @@ function App() {
         <Navbar />
       </div>
       <LandingPage />
-      <SongsSection />
+      <EpisodeSection />
       <PeopleSection />
       <Bts />
       <Footer />

@@ -1,0 +1,35 @@
+.text-white {
+  color: white;
+}
+
+.video-item {
+  padding: 15px;
+  margin: 10px;
+}
+
+.video-item h3 {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-weight: 400;  
+  margin-bottom: 20px;
+}
+
+.video-item img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.video-item iframe {
+  width: 400px;
+  height: 220px;
+  border-radius: 8px;
+}
+
+@media (max-width: 768px) {
+  .video-item {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

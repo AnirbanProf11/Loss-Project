@@ -1,21 +1,146 @@
-@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@600&display=swap");
 
-
-.header_style {
-    font-size: large;
-    font-weight: 600;
-    color: black;
-    font-family: 'Oswald', sans-serif;
-    padding-right: 20px;
+.navbar {
+  background-color: #000;
+  color: #fff;
+  padding: 10px 0;
+  position: relative;
+  transition: all 0.3s;
 }
 
-.nav-item {
-    transition: border-color 0.3s ease-in-out;
-    border: 1px solid transparent;
-    padding: 5px;
-    border-radius: 5px;
-    color: black;
+.navbar-toggler {
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  display: none;
+  position: absolute;
+  right: 15px;
+  top: 15px;
+  z-index: 2;
 }
-.nav-item:hover {
-   border-color: white;
+
+.navbar-toggler span {
+  background-color: #fff;
+  display: block;
+  height: 3px;
+  margin: 6px 0;
+  transition: 0.4s;
+  width: 30px;
+}
+
+#lossProjectTitle:hover {
+  color: #b30000;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+.nav-link {
+  color: wheat;
+  text-decoration: none;
+  transition: color 0.3s;
+  font-weight: normal;
+  position: relative;
+}
+
+.nav-link:hover {
+  font-weight: bold;
+  color: #b30000;
+}
+
+.spacer {
+  flex: 1;
+}
+
+[data-tooltip]:before {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #000;
+  color: #fff;
+  padding: 5px;
+  border: 1px solid #fff;
+  border-radius: 5px;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+[data-tooltip]:hover:before {
+  opacity: 1;
+}
+
+@media (max-width: 767px) {
+  .navbar-toggler {
+    display: block;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    z-index: 2;
+  }
+
+  .navbar-toggler span {
+    background-color: white;
+    display: block;
+    height: 3px;
+    margin: 6px 0;
+    transition: 0.4s;
+    width: 30px;
+  }
+
+  .navbar-toggler.open span:nth-child(1) {
+    transform: rotate(45deg) translate(-5px, 6px);
+  }
+  
+  .navbar-toggler.open span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .navbar-toggler.open span:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+
+  .nav {
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: #000;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s;
+  }
+
+  .navbar.collapsed .nav {
+    max-height: 0;
+  }
+
+  .navbar.opened .nav{
+    max-height: 1000px;
+  }
+
+  .nav-link {
+    color: white;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-weight: normal;
+    text-align: center;
+  }
+
+  .navbar.opened .nav-link {
+    display: block;
+  }
+
 }

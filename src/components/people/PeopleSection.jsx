@@ -20,7 +20,7 @@ const peopleData = [
     credentials: {
       instagram: "",
       facebook: "",
-      website: "",
+      spotify: "",
     },
     contribution: "Producer - Composer - Sound Engineer",
   },
@@ -31,9 +31,31 @@ const peopleData = [
     credentials: {
       instagram: "",
       facebook: "",
-      website: "",
+      spotify: "",
     },
     contribution: "Producer - Composer - Sound Engineer",
+  },
+  {
+    id: 4,
+    name: "Suge",
+    photo: "https://picsum.photos/id/117/200/300",
+    credentials: {
+      instagram: "",
+      facebook: "",
+      spotify: "",
+    },
+    contribution: "Mixing & Sound Engineer",
+  },
+  {
+    id: 5,
+    name: "Rishi",
+    photo: "https://picsum.photos/id/137/200/300",
+    credentials: {
+      instagram: "",
+      facebook: "",
+      website: "",
+    },
+    contribution: "Director - Cinematographer - Colorist",
   },
 ];
 
@@ -51,10 +73,32 @@ const PeopleSection = () => {
               <h3 className="person-name">{person.name}</h3>
               <p className="person-contribution">{person.contribution}</p>
               <div className="person-links">
-                <a href={person.credentials.instagram} target="_blank" className="person-links instagram-icon">
+                <a
+                  href={person.credentials.website}
+                  target="_blank"
+                  className="person-links website-icon"
+                >
+                  <i className="fas fa-globe"></i>
+                </a>
+                <a
+                  href={person.credentials.spotify}
+                  target="_blank"
+                  className="person-links spotify-icon"
+                >
+                  <i className="fab fa-spotify"></i>
+                </a>
+                <a
+                  href={person.credentials.instagram}
+                  target="_blank"
+                  className="person-links instagram-icon"
+                >
                   <i className="fab fa-instagram"></i>
                 </a>
-                <a href={person.credentials.facebook} target="_blank" className="person-links facebook-icon">
+                <a
+                  href={person.credentials.facebook}
+                  target="_blank"
+                  className="person-links facebook-icon"
+                >
                   <i className="fab fa-facebook"></i>
                 </a>
               </div>

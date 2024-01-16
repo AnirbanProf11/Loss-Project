@@ -1,79 +1,85 @@
-.episode-section{
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
+.episode-section {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  text-align: center;
 }
 
-.episode-title{
-    margin-bottom: 20px;
+.episode-title {
+  margin-bottom: 20px;
 }
 
 .episode-list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .episode-item {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: all 0.2s ease-in-out;
-    padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+  padding: 20px;
 }
 
 .left-content {
-    flex: 1;
-    padding-right: 20px;
+  flex: 1;
+  padding-right: 20px;
 }
 
 .right-content {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .box-component {
-    width: 400px;
-    height: 200px;
-    background-color: #ddd;
-    display: flex;
-    align-items: center;justify-content: center;
-    color: #333;
-    border: 1px solid #999;
-    border-radius: 5px;
+  width: 400px;
+  height: 200px;
+  background-color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #333;
+  border: 1px solid #999;
+  border-radius: 5px;
 }
 
 @media (max-width: 768px) {
-    .episode-item {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
+  .episode-item {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
 
-    .left-content {
-        padding-right: 0;
-        margin-bottom: 10px;
-    }
-
-    .right-content {
-        margin-top: 10px;
-        justify-content: center;
-    }
+  .left-content, .right-content {
+    padding-right: 0;
+    margin-top: 10px;
+  }
 }
 
 .episode-item:hover {
-    transform: scale(1.05);
-    box-shadow:  0 0 10px rgba(0, 0, 0, 0.3);
-    cursor: pointer;
+  transform: scale(1.05);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  cursor: pointer;
 }
 
 .episode-item:hover .left-content,
 .episode-item:hover .right-content {
-    padding: 20px;
+  padding: 20px;
+}
+
+.episode-item:nth-child(even) .left-content,
+.episode-item:nth-child(odd) .right-content {
+  order: 2;
+}
+
+.episode-item:nth-child(even) .rightt-content,
+.episode-item:nth-child(odd) .left-content {
+  order: 1;
 }

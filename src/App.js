@@ -18,7 +18,7 @@ function App() {
         <Navbar />
       </div>
       <LandingPage />
-      <SongTimeline />
+      <SongsSection />
       <PeopleSection />
       <Bts />
       <Footer />

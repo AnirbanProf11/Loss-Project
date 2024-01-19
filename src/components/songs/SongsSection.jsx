@@ -1,9 +1,9 @@
 import React from "react";
 import "./songs.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { gsap } from "gsap";
 
 const SongsSection = () => {
-  const [showModal, setShowModal] = useState(false);
   const [selectedSong, setSelectedSong] = useState(null);
 
   const songs = [
@@ -47,18 +47,7 @@ const SongsSection = () => {
 
   const handleSongClick = (song) => {
     setSelectedSong(song);
-    setShowModal(true);
   };
-
-  const closeModal = () => {
-    setShowModal(false);
-    setSelectedSong(null);
-  };
-
-  const handleBackdropClick = (event) => {
-    if (event.target === event.currentTarget) closeModal();
-  };
-
   const handlePlatformClick = (platform) => {
     switch (platform) {
       case "Spotify":
@@ -79,57 +68,28 @@ const SongsSection = () => {
     }
   };
 
+
   return (
     <>
-      <div className="container mt-5">
-        <h1 className="text-center mb-4">Tracks On Loss Project</h1>
-        {songs.map((song, index) => (
-          <div
-            key={index}
-            className="song-item"
-            onClick={() => handleSongClick(song)}
-          >
-            {song.name}
-            <div className="content-wrapper">
-              <div className="hover-effect"></div>
-            </div>
+      <h1 className="title-head">Tracks On Loss Project</h1>
+
+      <div className="container-dad">
+        <div className="container-sm cont1">
+          <ul>
+            {songs.map((song, index) => (
+              <li key={index} onClick={() => handleSongClick(song)}>
+                <strong>{song.name}</strong> - {song.platforms.join(" | ")}
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div className="container-sm cont2">
+          <div className="platform-icons">
+            <i className="fa-brands fa-spotify" />
           </div>
-        ))}
-        {showModal && (
-          <div className="modal-backdrop" onClick={handleBackdropClick}>
-            <div className="modal-dialog">
-              <div className="modal-content">
-                <div className="modal-header">
-                  <h5 className="modal-title">
-                    Listen To {selectedSong.name} On
-                  </h5>
-                  <button
-                    type="button"
-                    className="close"
-                    onClick={() => setShowModal(false)}
-                  >
-                    &times;
-                  </button>
-                </div>
-                <div className="modal-body">
-                  {selectedSong.platforms.map((platform, index) => (
-                    <button
-                      key={index}
-                      className="platform-button"
-                      onClick={() => handlePlatformClick(platform)}
-                    >
-                      <i className={`bi bi-${platform} platform-icon`}></i>
-                      {platform}
-                    </button>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-        )}
+        </div>
       </div>
     </>
   );
 };
-
 export default SongsSection;

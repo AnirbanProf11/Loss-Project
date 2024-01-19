@@ -1,9 +1,15 @@
-import React from "react";
+import { React } from "react";
 
 import { Footer, LandingPage, EpisodeSection } from "./containers";
-import { PeopleSection, SongsSection, Navbar, Bts } from "./components";
+import {
+  PeopleSection,
+  SongsSection,
+  Navbar,
+  Bts,
+  SongTimeline,
+} from "./components";
 
-import './App.css'
+import "./App.css";
 
 function App() {
   return (
@@ -12,7 +18,7 @@ function App() {
         <Navbar />
       </div>
       <LandingPage />
-      <EpisodeSection />
+      <SongTimeline />
       <PeopleSection />
       <Bts />
       <Footer />

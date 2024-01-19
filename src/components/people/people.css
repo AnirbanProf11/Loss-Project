@@ -12,13 +12,12 @@
 
 .people-container {
   display: flex;
-  flex-wrap: nowrap;
   justify-content: space-between;
   padding: 0 20px;
 }
 
 .person-item {
-  width: calc(33.33 - 40px);
+  width: calc(50% - 20px);
   margin-bottom: 20px;
   display: flex;
   flex-direction: column;
@@ -65,16 +64,64 @@
   cursor: pointer;
 }
 
+.person-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 10px;
+}
+
 .person-links a {
-  margin-right: 10px;
-  font-size: 24px;
+  width: calc(33.33% - 20px);
+  margin: 5px;
+  padding: px;
+  font-size: 30px;
   color: wheat;
-  transition: color 0.3s ease;
+  transition: coloor 0.3s ease;
+}
+
+.find-more-button-container {
+  text-align: center;
+  margin: 5px 0;
+}
+
+.find-more-button {
+  font-size: 18px;
+}
+
+.find-more-text {
+  color: white;
+  margin-top: 5px;
+  font-weight: bold;
+  padding: 20px;
+}
+
+.find-more-later-text {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 400;
+  align-content: center;
+  padding: 10px;
+  margin: 5px auto;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover,
+.btn-primary:active,
+.btn-primary:focus {
+  color: #fff;
+}
+
+.btn-primary:focus {
+  box-shadow: none;
 }
 
 .person-links a:hover {
-  color: #007bff;
-
   &.instagram-icon:hover {
     background: #d6249f;
     background: radial-gradient(
@@ -94,5 +141,26 @@
   }
   &.spotify-icon:hover {
     color: green;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .people-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px;
+  }
+
+  .person-item {
+    width: calc(50% - 20px);
+  }
+
+  .person-links {
+    justify-content: center;
+  }
+
+  .person-links a {
+    width: calc(33.3% - 10px);
   }
 }

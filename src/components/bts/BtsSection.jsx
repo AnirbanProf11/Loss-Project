@@ -1,15 +1,6 @@
 import React, { useState } from "react";
 import "./bts.css";
 
-// const VideoTile = ({ thumbnail, title, videoSrc, onClick }) => {
-//   return (
-//     <div className="video-tile" onClick={() => onClick(videoSrc)}>
-//       <img src={thumbnail} alt={title} />
-//       <div className="video-title">{title}</div>
-//     </div>
-//   );
-// };
-
 const BtsSection = () => {
   const btsVideoData = [
     {
@@ -52,43 +43,5 @@ const BtsSection = () => {
       </div>
     </div>
   );
-
-  // const [showVideo, setShowVideo] = useState(false);
-  // const [selectedVideo, setSelectedVideo] = useState("");
-
-  // const showVideoPopup = (videoSrc) => {
-  //   setShowVideo(true);
-  //   setSelectedVideo(videoSrc);
-  // };
-
-  // const closeVideoPopup = () => {
-  //   setShowVideo(false);
-  //   setSelectedVideo("");
-  // };
-
-  // return (
-  //   <div className="bts-section">
-  //     <h2 className="bts-head">Behind The Scenes</h2>
-
-  //     {btsVideoData.map((video) => (
-  //       <VideoTile
-  //         key={video.id}
-  //         title={video.title}
-  //         thumbnail={video.thumbnail}
-  //         videoSrc={video.videoSrc}
-  //         onClick={showVideoPopup}
-  //       />
-  //     ))}
-
-  //     {showVideo && (
-  //       <div className="video-popup" onClick={closeVideoPopup}>
-  //         <video controls className="video-player">
-  //           <source src={selectedVideo} type="video/mp4"></source>
-  //         </video>
-  //       </div>
-  //     )}
-  //   </div>
-  // );
 };
-
 export default BtsSection;

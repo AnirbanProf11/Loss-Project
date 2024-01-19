@@ -5,7 +5,7 @@ import { Cta } from "../../components";
 const LandingPageSection = () => {
   return (
     <>
-      <div class="flex-container bg_gradient">
+      <div className="flex-container bg_gradient">
         <img
           src="https://picsum.photos/200/600"
           className="responsive-image" alt="images" 

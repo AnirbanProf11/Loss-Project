@@ -1,60 +1,63 @@
 import React, { useState } from "react";
 import "./navbar.css";
-
 const NavbarSection = () => {
-  const [isCollapsed, setIsCollapsed] = useState(true);
-
-  const handleToggle = () => {
-    setIsCollapsed(!isCollapsed);
-  };
-
+  const [isNavExpanded, setIsNavExpanded] = useState(false);
   return (
-    <nav className={`navbar ${isCollapsed ? "collapsed" : "opened"}`}>
-      <div className="container">
-        <button
-          className={`navbar-toggler ${isCollapsed ? "" : "open"}`}
-          type="button"
-          onClick={handleToggle}
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
-
-        <ul className={`nav ${isCollapsed ? "collapsed" : ""}`}>
-          <li className="nav-item">
-            <a className="nav-link" href="/" data-tooltip="Home">
-              Home
-            </a>
+    <nav className="navigation">
+      <div
+        className={
+          isNavExpanded
+            ? "navigation-menu-left expanded"
+            : "navigation-menu-left"
+        }
+      >
+        <ul>
+          <li>
+            <a href="/home">Home</a>
           </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/songs" data-tooltip="Songs">
-              Songs
-            </a>
-          </li>
-        </ul>
-
-        <div className="spacer"></div>
-
-        <a className="navbar-brand" href="/" id="lossProjectTitle">
-          LOSS PROJECT
-        </a>
-
-        <div className="spacer"></div>
-
-        <ul className="nav">
-          <li className="nav-item">
-            <a className="nav-link" href="/bts" data-tooltip="BTS">
-              Behind The Scenes
-            </a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/people" data-tooltip="People">
-              People
-            </a>
+          <li>
+            <a href="/songs">Songs</a>
           </li>
         </ul>
       </div>
+      <a href="/" className="brand-name">
+        Loss
+      </a>
+      <p className="para">Project</p>
+      <div
+        className={
+          isNavExpanded ? "navigation-menu expanded" : "navigation-menu"
+        }
+      >
+        <ul>
+          <li>
+            <a href="/People">People</a>
+          </li>
+          <li>
+            <a href="/bts">BTS</a>
+          </li>
+        </ul>
+      </div>
+      <button
+        className="hamburger"
+        title="burgerbutton"
+        onClick={() => {
+          setIsNavExpanded(!isNavExpanded);
+        }}
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          className="h-5 w-5"
+          viewBox="0 0 20 20"
+          fill="white"
+        >
+          <path
+            fillRule="evenodd"
+            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
+            clipRule="evenodd"
+          />
+        </svg>
+      </button>
     </nav>
   );
 };

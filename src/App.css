@@ -17,8 +17,8 @@ a {
 .gradient_bg {
   background: linear-gradient(
     180deg,
-    rgba(250, 250, 239, 1) 0%,
-    rgba(138, 152, 153, 1) 50%,
+    rgb(58, 58, 45) 0%,
+    rgb(29, 35, 36) 50%,
     rgba(0, 0, 0, 0.71) 100%
   );
 }

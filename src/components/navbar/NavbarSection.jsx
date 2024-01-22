@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import "./navbar.css";
+import { NavLink } from "react-router-dom";
+
 const NavbarSection = () => {
   const [isNavExpanded, setIsNavExpanded] = useState(false);
   return (
@@ -13,10 +15,14 @@ const NavbarSection = () => {
       >
         <ul>
           <li>
-            <a href="/home">Home</a>
+            <NavLink to="/home" activeClassName="active">
+              Home
+            </NavLink>
           </li>
           <li>
-            <a href="/songs">Songs</a>
+            <NavLink to="/Songs" activeClassName="active">
+              Songs
+            </NavLink>
           </li>
         </ul>
       </div>
@@ -31,10 +37,14 @@ const NavbarSection = () => {
       >
         <ul>
           <li>
-            <a href="/People">People</a>
+            <NavLink to="/people" activeClassName="active">
+              People
+            </NavLink>
           </li>
           <li>
-            <a href="/bts">BTS</a>
+            <NavLink to="/bts" activeClassName="active">
+              BTS
+            </NavLink>
           </li>
         </ul>
       </div>

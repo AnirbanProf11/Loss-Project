@@ -3,10 +3,11 @@ import "./songs.css";
 import { useState, useEffect } from "react";
 import { gsap } from "gsap";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import SongModal from "./SongModal";
 
 const SongsSection = () => {
-  const [selectedSong, setSelectedSong] = useState(null);
-
+  const [selectedSong, setSelectedSong] = useState("");
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const songs = [
     {
       name: "Intro",
@@ -37,7 +38,7 @@ const SongsSection = () => {
       platforms: ["Spotify", "YouTube Music", "Amazon Music", "Apple Music"],
     },
     {
-      name: "C'est' La Vie",
+      name: "C'est La Vie",
       platforms: ["Spotify", "YouTube Music", "Amazon Music", "Apple Music"],
     },
     {
@@ -51,25 +52,16 @@ const SongsSection = () => {
     gsap.to(".cont2", { x: "0%", duration: 0.3, ease: "power3.inOut" });
   };
 
-  const animateOut = (onComplete) => {
-    gsap.to(".cont1", { x: "-100%", duration: 0.3, ease: "power3.inOut" });
-    gsap
-      .to(".cont2", { x: "50%", duration: 0.3, ease: "power3.inOut" })
-      .then(() => {
-        if (onComplete) {
-          onComplete();
-        }
-      });
+  const animateOut = () => {
+    gsap.to(".cont1", { x: "0%", duration: 0.3, ease: "power3.inOut" });
+    gsap.to(".cont2", { x: "50%", duration: 0.3, ease: "power3.inOut" });
   };
 
-  const animateToggle = () => {
-    if (selectedSong) animateIn();
-    else animateOut();
-  };
+  useEffect(() => {});
+
   const handleSongClick = (song) => {
     if (selectedSong === song) {
-      animateOut();
-      setTimeout(() => setSelectedSong(null), 500);
+      animateOut(() => setSelectedSong(null));
     } else {
       setSelectedSong(song);
       animateIn();
@@ -95,6 +87,11 @@ const SongsSection = () => {
     }
   };
 
+  const closeModal = () => {
+    setSelectedSong(null);
+    setIsModalOpen(false);
+  };
+
   return (
     <>
       <h1 className="title-head">Tracks On Loss Project</h1>
@@ -107,16 +104,23 @@ const SongsSection = () => {
             {songs.map((song, index) => (
               <div
                 key={index}
-                className="list-items"
+                className={`list-items ${
+                  selectedSong === song ? "list-items-selected" : ""
+                }`}
                 onClick={() => handleSongClick(song)}
               >
-                <strong>{song.name.replace("-", "")}</strong>
+                <strong>{song.name}</strong>
               </div>
             ))}
           </div>
         </div>
+
         <div className="container-sm cont2">
-          <h3>Listen To {songs.name} On Your Favourite Streaming Platform</h3>
+          {selectedSong.name && (
+            <h3>
+              Listen To {selectedSong.name} On Your Favourite Streaming Platform
+            </h3>
+          )}
           <div className="platform-icons">
             <div className="platform-icon">
               {<i class="fa-brands fa-spotify fa-3x"></i>}
@@ -128,11 +132,11 @@ const SongsSection = () => {
               {<i class="fa-brands fa-apple fa-4x"></i>}
             </div>
           </div>
-          Or{" "}
+          Or &nbsp;
           <button className="btn btn-lg btn-primary mt-2 mb-2">
             Click Here
-          </button>{" "}
-          To Find More Streaming Platforms
+          </button>
+          &nbsp; To Find More Streaming Platforms
           <h4 className="yt-title">Stream On YouTube</h4>
           <iframe
             title="YouTube Video"
@@ -142,6 +146,10 @@ const SongsSection = () => {
             allowFullScreen
           ></iframe>
         </div>
+
+        {isModalOpen && (
+          <SongModal selectedSong={setSelectedSong} onClose={closeModal} />
+        )}
       </div>
     </>
   );

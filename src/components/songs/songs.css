@@ -4,9 +4,6 @@
   margin-top: 20px;
 }
 
-ul {
-}
-
 .list-item {
   list-style: none;
   text-align: center;
@@ -35,9 +32,10 @@ ul {
   cursor: pointer;
   width: 100%;
   color: lavenderblush;
-  background-color: transpt;
+  background-color: transparent;
   padding: 10px;
   box-sizing: border-box;
+  transition: background-color 0.2s ease;
 }
 
 .list-items:hover {
@@ -56,6 +54,7 @@ ul {
   flex-direction: column;
   align-items: center;
 }
+
 .cont2 {
   margin-top: 20px;
   background-color: grey;
@@ -71,12 +70,6 @@ ul {
   transition: transform 0.2s ease;
 }
 
-.list-hidden {
-}
-
-.list-item-selected {
-  color: #b45;
-}
 
 iframe {
   width: 400px;

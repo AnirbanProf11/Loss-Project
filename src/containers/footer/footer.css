@@ -1,3 +1,11 @@
+.foot-font{
+  font-family: "Helvetica";
+  font-weight: 300;
+  justify-content: center;
+  text-align: center;
+
+}
+
 .insta-color {
     background: #d6249f;
     background: radial-gradient(

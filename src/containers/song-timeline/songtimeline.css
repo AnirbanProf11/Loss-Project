@@ -1,0 +1,130 @@
+.header-logo{
+  color: #f3f4f5;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 8px;
+  margin: 5px;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.timeline {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.branch {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 32px;
+  width: 80%;
+  height: 1;
+  margin-bottom: 30px;
+  justify-content: flex-end;
+}
+
+.branch-reverse {
+  width: 80%;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: flex-end;
+  margin-bottom: 30px;
+}
+
+.song-details {
+  padding: 16px;
+  background-color: #f3f4f6;
+  border-radius: 12px;
+  width: 40%;
+  height: 30vh;
+}
+
+.song-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.song-link {
+  font-size: 14px;
+  color: #2563eb;
+  text-decoration: none;
+}
+
+.song-icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border-radius: 50%;
+  background-color: #dbeafe;
+  border: 4px solid #ffffff;
+}
+
+.branch-line {
+  position: absolute;
+  top: 32px;
+  width: 20%;
+  height: 1px;
+  background-color: #22d3ee;
+}
+
+.branch-line-left {
+  right: 50%;
+  top: 10%;
+}
+
+.branch-line-right {
+  left: 50%;
+}
+
+/* Add media queries below */
+
+@media (max-width: 768px) {
+  /* Make the cards full width on small screens */
+  .branch,
+  .branch-reverse {
+    width: 90%;
+    margin: 10px 8px;
+  }
+
+  /* Make the song details half width on small screens */
+  .song-details {
+    width: 50%;
+  }
+
+  /* Adjust the branch lines on small screens */
+  .branch-line {
+    width: 10%;
+  }
+
+  .branch-line-left {
+    right: 25%;
+  }
+
+  .branch-line-right {
+    left: 25%;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 992px) {
+  /* Add some margin to the cards on medium screens */
+  .branch,
+  .branch-reverse {
+    margin: 16px;
+  }
+}
+
+@media (min-width: 992px) {
+  /* Increase the height of the cards on large screens */
+  .song-details {
+    height: 45vh;
+  }
+}

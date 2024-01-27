@@ -1,36 +1,74 @@
 .big-title-cta-container {
-    text-align: center;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 100%;
-    padding: 10px;
+  text-align: center;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%;
+  padding: 10px;
 }
 
 .big-title-cta-container h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
+  font-size: 2rem;
+  margin-bottom: 10px;
 }
 
 .cta-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
 }
+
+.song-btn:hover {
+    color: #f9f4f3;
+}
+
 
 .cta-buttons button {
-    padding: 10px 20px;
-    font-size: 18px
+  padding: 10px 20px;
+  font-size: 18px;
 }
 
-.color-yt{
-    color: #FF0000;
+.color-yt {
+  color: #ff0000;
 }
 
 .yt-title {
-    color: #282828;
+  color: #282828;
 }
-.yt-title:hover{
-    color: white;
+.yt-title:hover {
+  color: white;
+}
+
+button {
+  cursor: pointer;
+  font-weight: 700;
+  font-family: Helvetica, "sans-serif";
+  transition: all 0.2s;
+  padding: 10px 20px;
+  border-radius: 100px;
+  border: 1px solid transparent;
+  display: flex;
+  align-items: center;
+  font-size: 15px;
+}
+
+button:hover {
+  background: #e4311a;
+  color: #f9f3f3;
+}
+
+button > svg {
+  width: 34px;
+  margin-left: 10px;
+  transition: transform 0.3s ease-in-out;
+}
+
+button:hover svg {
+  transform: translateX(5px);
+}
+
+button:active {
+  transform: scale(0.95);
 }

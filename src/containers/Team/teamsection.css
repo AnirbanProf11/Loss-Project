@@ -1,10 +1,11 @@
 .people-section-container {
   text-align: center;
   margin-bottom: 70px;
+  margin-top: 50px;
 }
 
 .team-title {
-  font-family: "Oswald", sans-serif;
+  font-family: 'Oswald', sans-serif;
   color: antiquewhite;
   font-size: 2rem;
   margin-top: 20px;
@@ -30,12 +31,13 @@
 }
 
 /* .person-item:hover {
-    background-color: white;
-} */
+      background-color: white;
+  } */
 
 .person-item:hover {
   transform: scale(1.05);
   border: 1px solid wheat;
+  cursor: pointer;
 }
 
 .person-photo img {

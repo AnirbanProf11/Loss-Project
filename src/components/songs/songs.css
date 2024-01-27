@@ -2,6 +2,14 @@
   color: crimson;
   text-align: center;
   margin-top: 20px;
+  font-family: Oswald;
+  font-size: 2rem;
+}
+
+.title-card {
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  font-size: 1.8rem;
 }
 
 .list-item {
@@ -62,7 +70,6 @@
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  right: 0;
   right: 20px;
   position: absolute;
   overflow: hidden;
@@ -70,12 +77,12 @@
   transition: transform 0.2s ease;
 }
 
-
 iframe {
-  width: 400px;
-  height: 220px;
+  width: 565px;
+  height: 320px;
   margin-top: 20px;
   border-radius: 10px;
+  
 }
 
 .platform-icons {

@@ -2,7 +2,6 @@ import React from "react";
 import "./songs.css";
 import { useState, useEffect } from "react";
 import { gsap } from "gsap";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import SongModal from "./SongModal";
 
 const SongsSection = () => {
@@ -117,7 +116,7 @@ const SongsSection = () => {
 
         <div className="container-sm cont2">
           {selectedSong.name && (
-            <h3>
+            <h3 className="title-card">
               Listen To {selectedSong.name} On Your Favourite Streaming Platform
             </h3>
           )}
@@ -137,7 +136,6 @@ const SongsSection = () => {
             Click Here
           </button>
           &nbsp; To Find More Streaming Platforms
-          <h4 className="yt-title">Stream On YouTube</h4>
           <iframe
             title="YouTube Video"
             width="100%"

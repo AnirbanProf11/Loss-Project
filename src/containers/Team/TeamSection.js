@@ -1,5 +1,6 @@
 import React from "react";
-import "./people.css";
+import "./teamsection.css";
+import NavbarSection from "../../components/navbar/NavbarSection";
 
 const peopleData = [
   {
@@ -59,9 +60,10 @@ const peopleData = [
   },
 ];
 
-const PeopleSection = () => {
+const TeamSection = () => {
   return (
     <>
+      <NavbarSection />
       <div className="people-section-container">
         <h1 className="team-title">THE TEAM</h1>
         <div className="people-container">
@@ -137,4 +139,4 @@ const PeopleSection = () => {
   );
 };
 
-export default PeopleSection;
+export default TeamSection;

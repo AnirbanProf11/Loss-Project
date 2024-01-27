@@ -1,75 +1,39 @@
 import React, { useState } from "react";
 import "./navbar.css";
-import { NavLink } from "react-router-dom";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const NavbarSection = () => {
-  const [isNavExpanded, setIsNavExpanded] = useState(false);
+const Navbar = () => {
+  const [menuOpen, setMenuOpen] = useState(false);
+
   return (
-    <nav className="navigation">
-      <div
-        className={
-          isNavExpanded
-            ? "navigation-menu-left expanded"
-            : "navigation-menu-left"
-        }
-      >
-        <ul>
-          <li>
-            <NavLink to="/home" activeClassName="active">
-              Home
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/Songs" activeClassName="active">
-              Songs
-            </NavLink>
-          </li>
-        </ul>
-      </div>
-      <a href="/" className="brand-name">
-        Loss
-      </a>
-      <p className="para">Project</p>
-      <div
-        className={
-          isNavExpanded ? "navigation-menu expanded" : "navigation-menu"
-        }
-      >
-        <ul>
-          <li>
-            <NavLink to="/people" activeClassName="active">
-              People
-            </NavLink>
-          </li>
-          <li>
-            <NavLink to="/bts" activeClassName="active">
-              BTS
-            </NavLink>
-          </li>
-        </ul>
-      </div>
-      <button
-        className="hamburger"
-        title="burgerbutton"
-        onClick={() => {
-          setIsNavExpanded(!isNavExpanded);
-        }}
-      >
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          className="h-5 w-5"
-          viewBox="0 0 20 20"
-          fill="white"
+    <nav className="navbar">
+      <div className="container">
+        <div className="title">X</div>
+        <div className="links">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div
+          className={`burger ${menuOpen ? "active" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
         >
-          <path
-            fillRule="evenodd"
-            d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM9 15a1 1 0 011-1h6a1 1 0 110 2h-6a1 1 0 01-1-1z"
-            clipRule="evenodd"
-          />
-        </svg>
-      </button>
+          <FontAwesomeIcon icon={faBars} />
+        </div>
+        <div className={menuOpen ? "menu open" : "menu"}>
+          <div className="close" onClick={() => setMenuOpen(false)}>
+            <FontAwesomeIcon icon={faTimes} />
+          </div>
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#services">Services</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
     </nav>
   );
 };
 
-export default NavbarSection;
+export default Navbar;

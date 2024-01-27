@@ -3,7 +3,7 @@ import "./footer.css";
 
 const FooterSection = () => {
   return (
-    <footer className="bg-dark text-white pt-4 mt-5">
+    <footer className="bg-dark text-white pt-4 mt-5 foot-font">
       <div className="container">
         <div className="row">
           <div className="col-md-4 mb-4">
@@ -16,16 +16,16 @@ const FooterSection = () => {
             <h4>Quick Links</h4>
             <ul className="list-unstyled">
               <li>
-                <a href="#">Home</a>
+                <a href="/">Home</a>
               </li>
               <li>
-                <a href="#">Songs</a>
+                <a href="/songs">Songs</a>
               </li>
               <li>
-                <a href="#">People</a>
+                <a href="/people">People</a>
               </li>
               <li>
-                <a href="#">Behind The Scenes</a>
+                <a href="/bts">Behind The Scenes</a>
               </li>
             </ul>
           </div>
@@ -79,7 +79,7 @@ const FooterSection = () => {
         </div>
 
         <div className="row mt-4">
-          <div className="col-md-12 text-center">
+          <div className="col-md-12 text-center mb-4">
             <p>&copy; 2024 The Loss Project. All Rights Reserved</p>
             <p>
               <a href="/privacypolicy" className="text-white">

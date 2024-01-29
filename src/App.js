@@ -17,23 +17,26 @@ import {
 import { PeopleSection, SongsSection, Navbar, Bts } from "./components";
 
 import "./App.css";
+import { NextUIProvider } from "@nextui-org/react";
 
 function App() {
   return (
-    <Router>
-      <div className="gradient_bg">
-        <div>
-          <Routes>
-            <Route exact path="/" element={<LandingPage />} />
-            <Route path="/songs" element={<SongsSection />} />
-            <Route path="/people" element={<Teams />} />
-            <Route path="/bts" element={<Bts />} />
-            <Route path="/home" element={<LandingPage />} />
-          </Routes>
-          <Footer />
+    <NextUIProvider>
+      <Router>
+        <div className="gradient_bg">
+          <div>
+            <Routes>
+              <Route exact path="/" element={<LandingPage />} />
+              <Route path="/songs" element={<SongsSection />} />
+              <Route path="/people" element={<Teams />} />
+              <Route path="/bts" element={<Bts />} />
+              <Route path="/home" element={<LandingPage />} />
+            </Routes>
+            <Footer />
+          </div>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </NextUIProvider>
   );
 }
 

@@ -9,7 +9,7 @@ import SongTimeline from "../song-timeline/SongTimeline";
 const LandingPageSection = () => {
   return (
     <>
-      <div>
+      <div className="nav-div">
         <NavbarSection />
       </div>
 

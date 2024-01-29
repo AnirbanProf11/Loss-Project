@@ -1,39 +1,67 @@
+// NavbarSection.js
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
 import "./navbar.css";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-const Navbar = () => {
-  const [menuOpen, setMenuOpen] = useState(false);
+
+const NavbarSection = () => {
+  const [showMenu, setShowMenu] = useState(false);
+  const [showSearch, setShowSearch] = useState(false);
+
+  
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
+  const toggleSearch = () => {
+    setShowSearch(!showSearch);
+  };
 
   return (
     <nav className="navbar">
-      <div className="container">
-        <div className="title">X</div>
-        <div className="links">
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#contact">Contact</a>
+      <div className="navbar-container">
+        <Link to="/" className="navbar-logo">
+          Loss Project
+        </Link>
+        <ul className={showMenu ? "nav-menu active" : "nav-menu"}>
+          <li className="nav-item">
+            <Link to="/" className="nav-link" onClick={toggleMenu}>
+              Home
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/songs" className="nav-link" onClick={toggleMenu}>
+              Songs
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/people" className="nav-link" onClick={toggleMenu}>
+              Team
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link
+              to="/bts"
+              className="nav-link"
+              onClick={toggleMenu}
+            >
+              Behind The Scenes
+            </Link>
+          </li>
+        </ul>
+        <div className={showSearch ? "search-box active" : "search-box"}>
+          <input type="text" placeholder="Search..." />
         </div>
-        <div
-          className={`burger ${menuOpen ? "active" : ""}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-        >
-          <FontAwesomeIcon icon={faBars} />
+        <div className="burger" onClick={toggleMenu}>
+          {showMenu ? <FaTimes /> : <FaBars />}
         </div>
-        <div className={menuOpen ? "menu open" : "menu"}>
-          <div className="close" onClick={() => setMenuOpen(false)}>
-            <FontAwesomeIcon icon={faTimes} />
-          </div>
-          <a href="#home">Home</a>
-          <a href="#about">About</a>
-          <a href="#services">Services</a>
-          <a href="#contact">Contact</a>
+        <div className="search-icon" onClick={toggleSearch}>
+          <FaSearch />
         </div>
       </div>
     </nav>
   );
 };
 
-export default Navbar;
+export default NavbarSection;

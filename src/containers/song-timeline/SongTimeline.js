@@ -56,17 +56,17 @@ function SongTimeline() {
 
   return (
     <>
-    <div className="header-logo">Episodes</div>
-    <div className="timeline">
-      {songs.map((song, index) => (
-        <Branch
-          key={index}
-          title={song.name}
-          link={song.link}
-          side={index % 2 === 0 ? "left" : "right"}
-        />
-      ))}
-    </div>
+      <div className="header-logo">Episodes</div>
+      <div className="timeline">
+        {songs.map((song, index) => (
+          <Branch
+            key={index}
+            title={song.name}
+            link={song.link}
+            side={index % 2 === 0 ? "left" : "right"}
+          />
+        ))}
+      </div>
     </>
   );
 }

@@ -4,15 +4,8 @@ import "./cta.css";
 const CTA = () => {
   return (
     <div className="big-title-cta-container">
-      <h1>LOSS</h1>
-      <h1>PROJECT</h1>
-      &nbsp;
       <div className="cta-buttons">
-        <button
-          type="button"
-          className="btn song-btn"
-          
-        >
+        <button type="button" className="btn song-btn">
           <span className="span-text">Songs</span>
           <br></br>
           <br></br>

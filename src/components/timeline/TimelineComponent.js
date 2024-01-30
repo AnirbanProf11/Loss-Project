@@ -101,13 +101,13 @@ const TimelineItem = ({ data }) => (
       <p>{data.text}</p>
       <div className="icons">
         <a href="https://open.spotify.com">
-          <FaSpotify />
+          <FaSpotify className="fa-2x" />
         </a>
         <a href="https://www.youtube.com/music">
-          <FaYoutube />
+          <FaYoutube className="fa-2x" />
         </a>
         <a href="https://music.amazon.com">
-          <FaAmazon />
+          <FaAmazon className="fa-2x" />
         </a>
       </div>
     </div>

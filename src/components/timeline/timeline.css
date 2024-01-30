@@ -8,7 +8,7 @@
 
 /* Timeline line */
 .timeline-container::after {
-  background-color: #e17b77;
+  background:linear-gradient(white,#e17b77);
   content: "";
   position: absolute;
   left: calc(50% - 2px);
@@ -46,7 +46,7 @@
   padding: 15px;
   position: relative;
   width: 500px;
-  height: 320px;
+  height: 300px;
   max-width: 100%;
   text-align: right;
 }
@@ -64,10 +64,10 @@
   height: 15px;
 }
 
-.timeline-item-content:hover{
-    cursor: pointer;
-    transform: scale(1.05);
-    transition: all 0.5s ease-in-out;
+.timeline-item-content:hover {
+  cursor: pointer;
+  transform: scale(1.05);
+  transition: all 0.5s ease-in-out;
 }
 
 /* Timeline item content for odd items */
@@ -102,10 +102,10 @@
   right: 5px;
 }
 
-.timeline-item-content .tag{
-    border-radius: 10px;
-    padding: 10px 6px;
-    margin: 2px 5px;
+.timeline-item-content .tag {
+  border-radius: 10px;
+  padding: 10px 6px;
+  margin: 2px 5px;
 }
 
 /* Timeline item time */
@@ -127,7 +127,7 @@
 .timeline-item-content .icons {
   display: flex;
   justify-content: space-between;
-  width: 100px;
+  width: 250px;
 }
 
 /* Timeline item icons style */

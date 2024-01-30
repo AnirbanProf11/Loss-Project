@@ -5,9 +5,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  position: fixed;
-  top: 0;
-  left: 0;
+  position: relative;
+  
   z-index: 10;
   background-color: #333333;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -73,6 +72,8 @@
 }
 
 .search-icon:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
   color: #f44336; /* changed icon color to red on hover */
 }
 

@@ -26,9 +26,10 @@ const BtsSection = () => {
 
   return (
     <>
-      <NavbarSection />
       <div className="container mt-5">
-        <h2 className="text-center mb-4 text-white text-style">Behind The Scenes</h2>
+        <h2 className="text-center mb-4 text-white text-style">
+          Behind The Scenes
+        </h2>
         <div className="row justify-content-around">
           {btsVideoData.map((video) => (
             <div key={video.id} className="col-md-4 mb-4 video-item">

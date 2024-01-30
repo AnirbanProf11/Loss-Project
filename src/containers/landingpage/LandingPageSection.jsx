@@ -1,6 +1,6 @@
 import React from "react";
 import "./LandingPage.css";
-import { Cta } from "../../components";
+import { Cta, Timeline } from "../../components";
 import { PeopleSection } from "../../components";
 import { Bts } from "../../components";
 import NavbarSection from "../../components/navbar/NavbarSection";
@@ -40,7 +40,7 @@ const LandingPageSection = () => {
       </div>
 
       <SongTimeline />
-
+      <Timeline />
       <PeopleSection />
       <Bts />
     </>

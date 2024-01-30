@@ -1,0 +1,188 @@
+/* Timeline container */
+.timeline-container {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  margin: 40px 0;
+}
+
+/* Timeline line */
+.timeline-container::after {
+  background-color: #e17b77;
+  content: "";
+  position: absolute;
+  left: calc(50% - 2px);
+  width: 4px;
+  height: 100%;
+}
+
+/* Timeline item wrapper */
+.timeline-item-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  padding-right: 30px;
+  position: relative;
+  margin: 10px 0;
+  width: 50%;
+}
+
+/* Timeline item wrapper for odd items */
+.timeline-item-wrapper:nth-child(odd) {
+  align-self: flex-end;
+  justify-content: flex-start;
+  padding-left: 30px;
+  padding-right: 0;
+  margin-left: 50px; /* added to shift left cards to center */
+}
+
+/* Timeline item content */
+.timeline-item-content {
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 15px;
+  position: relative;
+  width: 500px;
+  height: 320px;
+  max-width: 100%;
+  text-align: right;
+}
+
+/* Timeline item content arrow */
+.timeline-item-content::after {
+  content: " ";
+  background-color: #fff;
+  box-shadow: 1px -1px 1px rgba(0, 0, 0, 0.2);
+  position: absolute;
+  right: -7.5px;
+  top: calc(50% - 7.5px);
+  transform: rotate(45deg);
+  width: 15px;
+  height: 15px;
+}
+
+.timeline-item-content:hover{
+    cursor: pointer;
+    transform: scale(1.05);
+    transition: transform 0.5s ease-in-out;
+}
+
+/* Timeline item content for odd items */
+.timeline-item-wrapper:nth-child(odd) .timeline-item-content {
+  text-align: left;
+  align-items: flex-start;
+}
+
+/* Timeline item content arrow for odd items */
+.timeline-item-wrapper:nth-child(odd) .timeline-item-content::after {
+  right: auto;
+  left: -7.5px;
+  box-shadow: -1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+/* Timeline item tag */
+.timeline-item-content .tag {
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  top: 5px;
+  left: 5px;
+  letter-spacing: 1px;
+  padding: 5px;
+  position: absolute;
+  text-transform: uppercase;
+}
+
+/* Timeline item tag for odd items */
+.timeline-item-wrapper:nth-child(odd) .timeline-item-content .tag {
+  left: auto;
+  right: 5px;
+}
+
+/* Timeline item time */
+.timeline-item-content time {
+  color: #777;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+/* Timeline item text */
+.timeline-item-content p {
+  font-size: 16px;
+  line-height: 24px;
+  margin: 15px 0;
+  max-width: 250px;
+}
+
+/* Timeline item icons */
+.timeline-item-content .icons {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+}
+
+/* Timeline item icons style */
+.timeline-item-content .icons a {
+  color: #333;
+  font-size: 24px;
+}
+
+/* Timeline item icons hover style */
+.timeline-item-content .icons a:hover {
+  color: #14cff0;
+}
+
+/* Timeline item circle */
+.timeline-item-content .circle {
+  background-color: #fff;
+  border: 3px solid #e17b77;
+  border-radius: 50%;
+  position: absolute;
+  top: calc(50% - 10px);
+  right: -40px;
+  width: 20px;
+  height: 20px;
+  z-index: 100;
+}
+
+/* Timeline item circle for odd items */
+.timeline-item-wrapper:nth-child(odd) .timeline-item-content .circle {
+  right: auto;
+  left: -40px;
+}
+
+/* Media queries for responsiveness */
+@media only screen and (max-width: 1023px) {
+  .timeline-item-content {
+    max-width: 100%;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .timeline-item-content,
+  .timeline-item-wrapper:nth-child(odd) .timeline-item-content {
+    padding: 15px 10px;
+    text-align: center;
+    align-items: center;
+  }
+
+  .timeline-item-content .tag {
+    width: calc(100% - 10px);
+    text-align: center;
+  }
+
+  .timeline-item-content time {
+    margin-top: 20px;
+  }
+
+  .timeline-item-content a {
+    text-decoration: underline;
+  }
+
+  .timeline-item-content a::after {
+    display: none;
+  }
+}

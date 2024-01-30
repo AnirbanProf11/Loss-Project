@@ -3,6 +3,7 @@ import "./songs.css";
 import { useState, useEffect } from "react";
 import { gsap } from "gsap";
 import SongModal from "./SongModal";
+import NavbarSection from "../navbar/NavbarSection";
 
 const SongsSection = () => {
   const [selectedSong, setSelectedSong] = useState("");
@@ -93,6 +94,7 @@ const SongsSection = () => {
 
   return (
     <>
+      <NavbarSection />
       <h1 className="title-head">Tracks On Loss Project</h1>
 
       <div className="container-dad">

@@ -1,7 +1,7 @@
 .title-head {
   color: crimson;
   text-align: center;
-  margin-top: 20px;
+  margin-top: 10px;
   font-family: Oswald;
   font-size: 2rem;
 }
@@ -30,6 +30,7 @@
   text-align: center;
   flex-direction: column;
   height: 100vh;
+  top: -15px;
   overflow: hidden;
   align-items: center;
 }
@@ -43,6 +44,7 @@
   background-color: transparent;
   padding: 10px;
   box-sizing: border-box;
+  border-radius: 15px;
   transition: background-color 0.2s ease;
 }
 

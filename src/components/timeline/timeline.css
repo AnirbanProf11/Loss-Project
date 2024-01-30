@@ -38,7 +38,7 @@
 /* Timeline item content */
 .timeline-item-content {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
-  border-radius: 5px;
+  border-radius: 20px;
   background-color: #fff;
   display: flex;
   flex-direction: column;
@@ -67,7 +67,7 @@
 .timeline-item-content:hover{
     cursor: pointer;
     transform: scale(1.05);
-    transition: transform 0.5s ease-in-out;
+    transition: all 0.5s ease-in-out;
 }
 
 /* Timeline item content for odd items */
@@ -100,6 +100,12 @@
 .timeline-item-wrapper:nth-child(odd) .timeline-item-content .tag {
   left: auto;
   right: 5px;
+}
+
+.timeline-item-content .tag{
+    border-radius: 10px;
+    padding: 10px 6px;
+    margin: 2px 5px;
 }
 
 /* Timeline item time */

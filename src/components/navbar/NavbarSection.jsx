@@ -4,12 +4,10 @@ import { Link } from "react-router-dom";
 import { FaBars, FaTimes, FaSearch } from "react-icons/fa";
 import "./navbar.css";
 
-
 const NavbarSection = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [showSearch, setShowSearch] = useState(false);
 
-  
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
@@ -41,11 +39,7 @@ const NavbarSection = () => {
             </Link>
           </li>
           <li className="nav-item">
-            <Link
-              to="/bts"
-              className="nav-link"
-              onClick={toggleMenu}
-            >
+            <Link to="/bts" className="nav-link" onClick={toggleMenu}>
               Behind The Scenes
             </Link>
           </li>
@@ -56,9 +50,9 @@ const NavbarSection = () => {
         <div className="burger" onClick={toggleMenu}>
           {showMenu ? <FaTimes /> : <FaBars />}
         </div>
-        <div className="search-icon" onClick={toggleSearch}>
-          <FaSearch />
-        </div>
+      </div>
+      <div className="search-icon" onClick={toggleSearch}>
+        <FaSearch />
       </div>
     </nav>
   );

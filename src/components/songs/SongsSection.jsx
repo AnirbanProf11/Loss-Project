@@ -52,12 +52,15 @@ const SongsSection = () => {
     gsap.to(".cont2", { x: "0%", duration: 0.3, ease: "power3.inOut" });
   };
 
-  const animateOut = () => {
-    gsap.to(".cont1", { x: "0%", duration: 0.3, ease: "power3.inOut" });
-    gsap.to(".cont2", { x: "50%", duration: 0.3, ease: "power3.inOut" });
+  const animateOut = (callback) => {
+    gsap.to(".cont1", { xPercent: "0%", duration: 0.3, ease: "power3.inOut" });
+    gsap.to(".cont2", {
+      xPercent: "50%",
+      duration: 0.3,
+      ease: "power3.inOut",
+      onComplete: callback,
+    });
   };
-
-  useEffect(() => {});
 
   const handleSongClick = (song) => {
     if (selectedSong === song) {
@@ -67,6 +70,7 @@ const SongsSection = () => {
       animateIn();
     }
   };
+
   const handlePlatformClick = (platform) => {
     switch (platform) {
       case "Spotify":

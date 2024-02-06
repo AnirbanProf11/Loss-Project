@@ -4,16 +4,18 @@ import "./footer.css";
 const FooterSection = () => {
   return (
     <footer className="bg-dark text-white pt-4 mt-5 foot-font">
-      <div className="container">
+      <div className="container-sm">
         <div className="row">
-          <div className="col-md-4 mb-4">
-            <h3>About Us</h3>
-            <h4>The Loss Project</h4>
-            <p>Kolkata, West Bengal, India <br></br> Phone : <br></br> Email :</p>
+          <div className="justify-center text-left col-md-4 mb-4">
+            <h3 className="pb-3 text-xl">About Us</h3>
+            <h4 className="pb-2">The Loss Project</h4>
+            <p className="location">
+              Kolkata, West Bengal, India <br></br> Phone : <br></br> Email :
+            </p>
           </div>
 
           <div className="col-md-4 mb-4">
-            <h4>Quick Links</h4>
+            <h4 className="pb-3 text-xl">Quick Links</h4>
             <ul className="list-unstyled">
               <li>
                 <a href="/">Home</a>
@@ -31,8 +33,7 @@ const FooterSection = () => {
           </div>
 
           <div className="col-md-4 mb-4">
-            <h4>Connect With Us</h4>
-            &nbsp;
+            <h4 className="text-xl">Connect With Us</h4> 
             <ul className="list-unstyled d-flex justify-content-between">
               <li>
                 <a
@@ -78,9 +79,11 @@ const FooterSection = () => {
           </div>
         </div>
 
-        <div className="row mt-4">
-          <div className="col-md-12 text-center mb-4">
-            <p>&copy; 2024 The Loss Project. All Rights Reserved</p>
+        <div className="row mt-1">
+          <div className="col-md-12 text-center mb-2">
+            <p className="text-xs">
+              © 2024 The Loss Project. All Rights Reserved
+            </p>
             <p>
               <a href="/privacypolicy" className="text-white">
                 Privacy Policy

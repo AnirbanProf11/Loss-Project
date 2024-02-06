@@ -1,14 +1,18 @@
+/* Brand Logo */
+
+
 /* Timeline container */
 .timeline-container {
   display: flex;
   flex-direction: column;
   position: relative;
-  margin: 40px 0;
+  margin: 40px 0 80px 0; /* added margin-bottom */
 }
 
 /* Timeline line */
 .timeline-container::after {
-  background:linear-gradient(white,#e17b77);
+  /* changed the background color to a gradient of red shades */
+  background: linear-gradient(to bottom, #f44336, #e91e63, #9c27b0);
   content: "";
   position: absolute;
   left: calc(50% - 2px);
@@ -43,7 +47,10 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  position: absolute;
+  right: 8px;
   padding: 15px;
+  margin-top: 20px;
   position: relative;
   width: 500px;
   height: 300px;
@@ -64,11 +71,11 @@
   height: 15px;
 }
 
-.timeline-item-content:hover {
+/* .timeline-item-content:hover {
   cursor: pointer;
   transform: scale(1.05);
   transition: all 0.5s ease-in-out;
-}
+} */
 
 /* Timeline item content for odd items */
 .timeline-item-wrapper:nth-child(odd) .timeline-item-content {
@@ -154,41 +161,64 @@
   z-index: 100;
 }
 
+/* Timeline item circle hover style */
+.timeline-item-content .circle:hover {
+  /* changed the border color and the background color on hover */
+  border-color: #14cff0;
+  background-color: #e17b77;
+  transition: all 0.3s ease-in-out;
+}
+
 /* Timeline item circle for odd items */
 .timeline-item-wrapper:nth-child(odd) .timeline-item-content .circle {
   right: auto;
   left: -40px;
 }
 
-/* Media queries for responsiveness */
-@media only screen and (max-width: 1023px) {
+/* Media query for screens less than or equal to 768px */
+@media (max-width: 768px) {
+  /* Change the flex direction of the timeline container to row */
+  .timeline-container {
+    flex-direction: row;
+  }
+
+  /* Change the position and width of the timeline line */
+  .timeline-container::after {
+    top: calc(50% - 2px);
+    left: 0;
+    width: 100%;
+    height: 4px;
+  }
+
+  /* Change the flex direction and width of the timeline item wrapper */
+  .timeline-item-wrapper {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  /* Change the order and alignment of the timeline item content */
   .timeline-item-content {
-    max-width: 100%;
+    order: 1; /* place the content after the circle */
+    align-self: flex-end; /* align the content to the right */
   }
-}
 
-@media only screen and (max-width: 767px) {
-  .timeline-item-content,
+  /* Change the order and alignment of the timeline item content for odd items */
   .timeline-item-wrapper:nth-child(odd) .timeline-item-content {
-    padding: 15px 10px;
-    text-align: center;
-    align-items: center;
+    order: 1; /* place the content after the circle */
+    align-self: flex-end; /* align the content to the right */
   }
 
-  .timeline-item-content .tag {
-    width: calc(100% - 10px);
-    text-align: center;
+  /* Change the position and order of the timeline item circle */
+  .timeline-item-content .circle {
+    top: 0;
+    right: 0;
+    order: 0; /* place the circle before the content */
   }
 
-  .timeline-item-content time {
-    margin-top: 20px;
-  }
-
-  .timeline-item-content a {
-    text-decoration: underline;
-  }
-
-  .timeline-item-content a::after {
-    display: none;
+  /* Change the position and order of the timeline item circle for odd items */
+  .timeline-item-wrapper:nth-child(odd) .timeline-item-content .circle {
+    top: 0;
+    right: 0;
+    order: 0; /* place the circle before the content */
   }
 }

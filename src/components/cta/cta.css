@@ -1,3 +1,25 @@
+.brand-logo {
+  /* center the logo on top of the timeline */
+  position: relative;
+  top: 0;
+  left: 50%;
+  transform: translateX(-57%);
+  /* add some margin and padding */
+  margin: 10px;
+  padding: 5px;
+  /* make the logo a circle with a border */
+ 
+  /* make the size appropriate for a brand icon logo */
+  width: 180px;
+  height: 130px;
+  /* adjust the image inside the logo */
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit:contain;
+  }
+}
+
 .big-title-cta-container {
   text-align: center;
   padding: 20px;

@@ -1,0 +1,49 @@
+/* Define a container for the video component */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #222;
+  }
+  
+  /* Add some styles for the video player */
+  .video-player {
+    width: 80%;
+    max-width: 960px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Use the motion component to add some animation */
+  .motion-div {
+    transform-origin: center;
+  }
+  
+  /* Add some custom controls for the video player */
+  .video-player .video-js {
+    font-size: 16px;
+    color: white;
+  }
+  
+  .video-player .vjs-control-bar {
+    background-color: rgba(0, 0, 0, 0.8);
+  }
+  
+  .video-player .vjs-big-play-button {
+    border-color: white;
+    font-size: 40px;
+  }
+  
+  .video-player .vjs-play-progress {
+    background-color: #f00;
+  }
+  
+  .video-player .vjs-volume-level {
+    background-color: #f00;
+  }
+  
+  .video-player .vjs-fullscreen-control {
+    font-size: 24px;
+  }
+  

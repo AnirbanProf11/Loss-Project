@@ -1,21 +1,22 @@
-.foot-font{
-  font-family: "Helvetica";
-  font-weight: 300;
+
+.foot-font {
+  font-family: "Noto Sans", sans-serif;
+  font-weight: 400;
+  display: flex;
   justify-content: center;
   text-align: center;
-
 }
 
 .insta-color {
-    background: #d6249f;
-    background: radial-gradient(
-      circle at 30% 107%,
-      #fdf497 0%,
-      #fdf497 5%,
-      #fd5949 45%,
-      #d6249f 60%,
-      #285aeb 90%
-    );
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+  background: #d6249f;
+  background: radial-gradient(
+    circle at 30% 107%,
+    #fdf497 0%,
+    #fdf497 5%,
+    #fd5949 45%,
+    #d6249f 60%,
+    #285aeb 90%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }

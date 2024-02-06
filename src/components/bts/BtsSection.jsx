@@ -26,7 +26,7 @@ const BtsSection = () => {
 
   return (
     <>
-      <div className="container mt-5">
+      <div className="container-sm mt-5">
         <h2 className="text-center mb-4 text-white text-style">
           Behind The Scenes
         </h2>

@@ -4,7 +4,7 @@ import { Cta, Timeline } from "../../components";
 import { PeopleSection } from "../../components";
 import { Bts } from "../../components";
 import NavbarSection from "../../components/navbar/NavbarSection";
-import SongTimeline from "../song-timeline/SongTimeline";
+import TrailerComponent from "../videoTrailer/TrailerComponent";
 
 const LandingPageSection = () => {
   return (
@@ -38,8 +38,7 @@ const LandingPageSection = () => {
           alt="images"
         ></img>
       </div>
-
-      <SongTimeline />
+      <TrailerComponent />
       <Timeline />
       <PeopleSection />
       <Bts />

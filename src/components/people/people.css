@@ -36,6 +36,7 @@
 .person-item:hover {
   transform: scale(1.05);
   border: 1px solid wheat;
+  transition: all 0.3s ease-in-out;
 }
 
 .person-photo img {
@@ -61,7 +62,7 @@
 }
 
 .person-name:hover {
-  color: wheat;
+  color: red;
   cursor: pointer;
 }
 

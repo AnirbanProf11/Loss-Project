@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { gsap } from "gsap";
 import SongModal from "./SongModal";
 import NavbarSection from "../navbar/NavbarSection";
-
 const SongsSection = () => {
   const [selectedSong, setSelectedSong] = useState("");
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -138,7 +137,7 @@ const SongsSection = () => {
             </div>
           </div>
           Or &nbsp;
-          <button className="btn btn-lg btn-primary mt-2 mb-2">
+          <button className="btn btn-primary mt-2 mb-2">
             Click Here
           </button>
           &nbsp; To Find More Streaming Platforms

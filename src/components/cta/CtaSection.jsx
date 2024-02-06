@@ -1,11 +1,18 @@
 import React from "react";
 import "./cta.css";
-
+import { default as Logo } from "../../assets/Logo-Design1.png";
 const CTA = () => {
   return (
     <div className="big-title-cta-container">
+      <div className="brand-logo">
+        <img src={Logo} alt="Brand Logo" />
+      </div>
       <div className="cta-buttons">
-        <button type="button" className="btn song-btn">
+        <button
+          type="button"
+          className="btn song-btn"
+          onClick={() => (window.location.href = "/songs")}
+        >
           <span className="span-text">Songs</span>
           <br></br>
           <br></br>

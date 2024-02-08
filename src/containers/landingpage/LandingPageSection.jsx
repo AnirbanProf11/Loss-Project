@@ -5,10 +5,11 @@ import { PeopleSection } from "../../components";
 import { Bts } from "../../components";
 import NavbarSection from "../../components/navbar/NavbarSection";
 import TrailerComponent from "../videoTrailer/TrailerComponent";
+import { NextUIProvider } from "@nextui-org/react";
 
 const LandingPageSection = () => {
   return (
-    <>
+    <NextUIProvider>
       <div className="nav-div">
         <NavbarSection />
       </div>
@@ -42,7 +43,7 @@ const LandingPageSection = () => {
       <Timeline />
       <PeopleSection />
       <Bts />
-    </>
+    </NextUIProvider>
   );
 };
 

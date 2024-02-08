@@ -77,13 +77,13 @@ const TimelineItem = ({ data, index, i }) => {
         </motion.p>
         <div className="icons">
           <a href="https://open.spotify.com">
-            <FaSpotify className="fa-2x" />
+            <FaSpotify size="1.5em" />
           </a>
           <a href="https://www.youtube.com/music">
-            <FaYoutube className="fa-2x" />
+            <FaYoutube size="1.5em" />
           </a>
           <a href="https://music.amazon.com">
-            <FaAmazon className="fa-2x" />
+            <FaAmazon size="1.5em" />
           </a>
         </div>
       </div>
@@ -102,18 +102,6 @@ const TimelineComponent = () => {
   const handleClick = (i) => {
     setIndex(i);
     setCurrentDate(new Date(timelineData[i].date));
-  };
-
-  const getColor = (i) => {
-    // Use a linear interpolation formula to get the color value
-    // https://en.wikipedia.org/wiki/Linear_interpolation
-    const x0 = 0; // The minimum index
-    const x1 = timelineData.length - 1; // The maximum index
-    const y0 = 255; // The minimum color value (white)
-    const y1 = 0; // The maximum color value (red)
-    const x = i; // The current index
-    const y = Math.round(y0 + ((x - x0) * (y1 - y0)) / (x1 - x0)); // The interpolated color value
-    return `rgb($ {y}, $ {y}, $ {y})`; // Return the color in rgb format
   };
 
   return (
@@ -139,7 +127,6 @@ const TimelineComponent = () => {
           {/* use motion.span instead of span and add a layout and layoutId props */}
           <motion.span
             className="circle"
-            style={{ borderColor: getColor(i) }}
             layout // enable layout animation
             layoutId={data.id} // assign a unique id for each circle
           />{" "}

@@ -6,7 +6,7 @@ const FooterSection = () => {
     <footer className="bg-dark text-white pt-4 mt-5 foot-font">
       <div className="container-sm">
         <div className="row">
-          <div className="justify-center text-left col-md-4 mb-4">
+          <div className="justify-center text-center col-md-4 mb-4">
             <h3 className="pb-3 text-xl">About Us</h3>
             <h4 className="pb-2">The Loss Project</h4>
             <p className="location">

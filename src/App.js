@@ -6,6 +6,7 @@ import {
   NavLink,
 } from "react-router-dom";
 
+
 import {
   Footer,
   LandingPage,
@@ -20,20 +21,22 @@ import "./App.css";
 
 function App() {
   return (
-    <Router>
-      <div className="gradient_bg">
-        <div>
-          <Routes>
-            <Route exact path="/" element={<LandingPage />} />
-            <Route path="/songs" element={<SongsSection />} />
-            <Route path="/people" element={<Teams />} />
-            <Route path="/bts" element={<BTS />} />
-            <Route path="/home" element={<LandingPage />} />
-          </Routes>
-          <Footer />
+    <>
+      <Router>
+        <div className="gradient_bg">
+          <div>
+            <Routes>
+              <Route exact path="/" element={<LandingPage />} />
+              <Route path="/songs" element={<SongsSection />} />
+              <Route path="/people" element={<Teams />} />
+              <Route path="/bts" element={<BTS />} />
+              <Route path="/home" element={<LandingPage />} />
+            </Routes>
+            <Footer />
+          </div>
         </div>
-      </div>
-    </Router>
+      </Router>
+    </>
   );
 }
 

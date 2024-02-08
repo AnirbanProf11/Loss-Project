@@ -1,6 +1,3 @@
-/* Brand Logo */
-
-
 /* Timeline container */
 .timeline-container {
   display: flex;
@@ -175,36 +172,65 @@
   left: -40px;
 }
 
-/* Media query for screens less than or equal to 768px */
+.icons {
+  display: flex; /* use the flexbox layout */
+  align-items: center; /* align the icons vertically */
+  justify-content: space-around; /* create equal space around the icons */
+}
+
+@media screen and (max-width: 600px) {
+  /* reduce the font-size of the icons on small screens */
+  .icons {
+    font-size: 0.8em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .timeline-item {
+    width: 100%; /* set the card width to 100% on small screens */
+    margin: 10px 0; /* add some margin to the top and bottom of the card */
+  }
+}
+
+@media (min-width: 601px) and (max-width: 900px) {
+  .timeline-item {
+    width: 85%; /* set the card width to 48% on medium screens */
+    margin: 1%; /* add some margin to the left and right of the card */
+  }
+}
+
 @media (max-width: 768px) {
-  /* Change the flex direction of the timeline container to row */
+  /* Change the flex direction of the timeline container to column */
   .timeline-container {
-    flex-direction: row;
-  }
-
-  /* Change the position and width of the timeline line */
-  .timeline-container::after {
-    top: calc(50% - 2px);
-    left: 0;
-    width: 100%;
-    height: 4px;
-  }
-
-  /* Change the flex direction and width of the timeline item wrapper */
-  .timeline-item-wrapper {
     flex-direction: column;
-    width: 100%;
+  }
+
+  /* Change the position and height of the timeline line */
+  .timeline-container::after {
+    top: 0;
+    left: calc(50% - 2px);
+    width: 4px;
+    height: 100%;
+  }
+
+  /* Change the flex direction and height of the timeline item wrapper */
+  .timeline-item-wrapper {
+    flex-direction: row;
+    height: 100%;
   }
 
   /* Change the order and alignment of the timeline item content */
   .timeline-item-content {
     order: 1; /* place the content after the circle */
-    align-self: flex-end; /* align the content to the right */
+    align-self: flex-start; /* align the content to the left */
   }
 
   /* Change the order and alignment of the timeline item content for odd items */
   .timeline-item-wrapper:nth-child(odd) .timeline-item-content {
-    order: 1; /* place the content after the circle */
+    order: 0; /* place the content before the circle */
     align-self: flex-end; /* align the content to the right */
   }
 
@@ -218,7 +244,11 @@
   /* Change the position and order of the timeline item circle for odd items */
   .timeline-item-wrapper:nth-child(odd) .timeline-item-content .circle {
     top: 0;
-    right: 0;
-    order: 0; /* place the circle before the content */
+    left: 0;
+    order: 1; /* place the circle after the content */
+  }
+
+  .icons {
+    gap: 0;
   }
 }
